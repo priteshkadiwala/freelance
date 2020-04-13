@@ -8,7 +8,9 @@ import store from './store';
 // Import bootstrap vue
 Vue.use(BootstrapVue);
 
-Vue.use(VueLazyload);
+Vue.use(VueLazyload, {
+  loading: '/static/assets/img/loading.gif',
+});
 
 Vue.config.productionTip = false;
 

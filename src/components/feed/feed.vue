@@ -1,34 +1,34 @@
 <template>
-  <div class="post">
-    <section class="position-relative" v-for="(item, index) in images" :key="index">
+  <div class="post" :style="setHeight">
+    <section class="position-relative h-100" v-for="(item, index) in images" :key="index">
       <!-- images -->
-      <b-carousel :interval="0" indicators>
+      <b-carousel :interval="0" indicators class="h-100">
         <!-- image 1 -->
-        <b-carousel-slide v-if="item.image1 != null">
+        <b-carousel-slide v-if="item.image1 != null" class="h-100">
           <template v-slot:img>
             <img class="item_photos" v-lazy="item.image1" alt="image slot" />
           </template>
         </b-carousel-slide>
         <!-- image 2 -->
-        <b-carousel-slide v-if="item.image2 != null">
+        <b-carousel-slide v-if="item.image2 != null" class="h-100">
           <template v-slot:img>
             <img class="item_photos" v-lazy="item.image2" alt="image slot" />
           </template>
         </b-carousel-slide>
         <!-- image 3 -->
-        <b-carousel-slide v-if="item.image3 != null">
+        <b-carousel-slide v-if="item.image3 != null" class="h-100">
           <template v-slot:img>
             <img class="item_photos" v-lazy="item.image3" alt="image slot" />
           </template>
         </b-carousel-slide>
         <!-- image 4 -->
-        <b-carousel-slide v-if="item.image4 != null">
+        <b-carousel-slide v-if="item.image4 != null" class="h-100">
           <template v-slot:img>
             <img class="item_photos" v-lazy="item.image4" alt="image slot" />
           </template>
         </b-carousel-slide>
         <!-- image 5 -->
-        <b-carousel-slide v-if="item.image5 != null">
+        <b-carousel-slide v-if="item.image5 != null" class="h-100">
           <template v-slot:img>
             <img class="item_photos" v-lazy="item.image5" alt="image slot" />
           </template>
@@ -139,16 +139,27 @@ export default {
           image5: null,
         },
       ],
+      setHeight: {
+        height: 'auto',
+      },
     };
+  },
+  mounted() {
+    this.setHeight.height = `${window.innerHeight - 68}px`;
   },
 };
 </script>
 
 <style scoped>
 .post {
-  height: calc(100vh - 68px);
+  /* height: calc(100vh - 68px); */
   width: 100%;
   overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  scroll-snap-align: start;
 }
 
 .item_photos {
@@ -170,6 +181,10 @@ export default {
 }
 </style>
 <style>
+.carousel-inner {
+  height: 100%;
+}
+
 .carousel-indicators {
   top: 70px;
   bottom: 0;
@@ -181,5 +196,14 @@ export default {
   height: 20px;
   border-radius: 50%;
   outline: none;
+}
+
+img[lazy='loading'] {
+  width: 100px !important;
+  height: 100px !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 </style>
