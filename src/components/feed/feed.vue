@@ -1,36 +1,36 @@
 <template>
   <div class="post" :style="setHeight">
-    <section class="position-relative h-100" v-for="(item, index) in images" :key="index">
+    <section class="position-relative h-100" v-for="(post, index) in posts" :key="index">
       <!-- images -->
       <b-carousel :interval="0" indicators class="h-100">
         <!-- image 1 -->
-        <b-carousel-slide v-if="item.image1 != null" class="h-100">
+        <b-carousel-slide v-if="post.image_path_1 != ''" class="h-100">
           <template v-slot:img>
-            <img class="item_photos" v-lazy="item.image1" alt="image slot" />
+            <img class="item_photos" v-lazy="url + post.image_path_1" alt="image slot" />
           </template>
         </b-carousel-slide>
         <!-- image 2 -->
-        <b-carousel-slide v-if="item.image2 != null" class="h-100">
+        <b-carousel-slide v-if="post.image_path_2 != ''" class="h-100">
           <template v-slot:img>
-            <img class="item_photos" v-lazy="item.image2" alt="image slot" />
+            <img class="item_photos" v-lazy="url + post.image_path_2" alt="image slot" />
           </template>
         </b-carousel-slide>
         <!-- image 3 -->
-        <b-carousel-slide v-if="item.image3 != null" class="h-100">
+        <b-carousel-slide v-if="post.image_path_3 != ''" class="h-100">
           <template v-slot:img>
-            <img class="item_photos" v-lazy="item.image3" alt="image slot" />
+            <img class="item_photos" v-lazy="url + post.image_path_3" alt="image slot" />
           </template>
         </b-carousel-slide>
         <!-- image 4 -->
-        <b-carousel-slide v-if="item.image4 != null" class="h-100">
+        <b-carousel-slide v-if="post.image_path_4 != ''" class="h-100">
           <template v-slot:img>
-            <img class="item_photos" v-lazy="item.image4" alt="image slot" />
+            <img class="item_photos" v-lazy="url + post.image_path_4" alt="image slot" />
           </template>
         </b-carousel-slide>
         <!-- image 5 -->
-        <b-carousel-slide v-if="item.image5 != null" class="h-100">
+        <b-carousel-slide v-if="post.image_path_5 != ''" class="h-100">
           <template v-slot:img>
-            <img class="item_photos" v-lazy="item.image5" alt="image slot" />
+            <img class="item_photos" v-lazy="url + post.image_path_5" alt="image slot" />
           </template>
         </b-carousel-slide>
       </b-carousel>
@@ -67,85 +67,74 @@
       </div>
       <!-- details -->
       <div class="w-100 details py-3 px-2">
-        <h4 class="text-white mb-1 font-weight-bold">ID: 1042/Padocarpus</h4>
-        <h4 class="text-white mb-1 font-weight-bold">Height: 420cm Width: 250cm</h4>
-        <h4 class="text-white mb-1 font-weight-bold">Circumference: 105cm</h4>
+        <h4 class="text-white mb-1 font-weight-bold">
+          ID: {{ post.id }} / {{ typeList[post.type_id] }}
+        </h4>
+
+        <div v-if="lang == 'en'">
+          <h4 class="text-white mb-1 font-weight-bold">
+            {{ lang_json.en.height }}: {{ post.height }} {{ lang_json.en.width }}: {{ post.width }}
+          </h4>
+          <h4 class="text-white mb-1 font-weight-bold">
+            {{ lang_json.en.circumference }}: {{ post.around }}
+          </h4>
+        </div>
+        <div v-if="lang == 'vi'">
+          <h4 class="text-white mb-1 font-weight-bold">
+            {{ lang_json.en.height }}: {{ post.height }} {{ lang_json.en.width }}: {{ post.width }}
+          </h4>
+          <h4 class="text-white mb-1 font-weight-bold">
+            {{ lang_json.en.circumference }}: {{ post.around }}
+          </h4>
+        </div>
+        <div v-if="lang == 'ja'">
+          <h4 class="text-white mb-1 font-weight-bold">
+            {{ lang_json.en.height }}: {{ post.height }} {{ lang_json.en.width }}: {{ post.width }}
+          </h4>
+          <h4 class="text-white mb-1 font-weight-bold">
+            {{ lang_json.en.circumference }}: {{ post.around }}
+          </h4>
+        </div>
+        <div v-if="lang == 'zh'">
+          <h4 class="text-white mb-1 font-weight-bold">
+            {{ lang_json.en.height }}: {{ post.height }} {{ lang_json.en.width }}: {{ post.width }}
+          </h4>
+          <h4 class="text-white mb-1 font-weight-bold">
+            {{ lang_json.en.circumference }}: {{ post.around }}
+          </h4>
+        </div>
       </div>
     </section>
   </div>
 </template>
 
 <script>
+import lang_from_json from '@/../public/static/lang.json';
+
+import { mapGetters, mapState } from 'vuex';
+
 export default {
   name: 'feed',
   data() {
     return {
-      images: [
-        {
-          image1:
-            'https://images.unsplash.com/photo-1586398001762-7ddd311debd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80',
-          image2:
-            'https://images.unsplash.com/photo-1586278500132-7c85dfbc51d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80',
-          image3: null,
-          image4: null,
-          image5: null,
-        },
-        {
-          image1:
-            'https://images.unsplash.com/photo-1586398001762-7ddd311debd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80',
-          image2:
-            'https://images.unsplash.com/photo-1586278500132-7c85dfbc51d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80',
-          image3:
-            'https://images.unsplash.com/photo-1586398001762-7ddd311debd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80',
-          image4: null,
-          image5: null,
-        },
-        {
-          image1:
-            'https://images.unsplash.com/photo-1586398001762-7ddd311debd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80',
-          image2: null,
-          image3: null,
-          image4: null,
-          image5: null,
-        },
-        {
-          image1:
-            'https://images.unsplash.com/photo-1586398001762-7ddd311debd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80',
-          image2:
-            'https://images.unsplash.com/photo-1586278500132-7c85dfbc51d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80',
-          image3:
-            'https://images.unsplash.com/photo-1586398001762-7ddd311debd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80',
-          image4:
-            'https://images.unsplash.com/photo-1586278500132-7c85dfbc51d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80',
-          image5:
-            'https://images.unsplash.com/photo-1586398001762-7ddd311debd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80',
-        },
-        {
-          image1:
-            'https://images.unsplash.com/photo-1586398001762-7ddd311debd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80',
-          image2:
-            'https://images.unsplash.com/photo-1586278500132-7c85dfbc51d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80',
-          image3:
-            'https://images.unsplash.com/photo-1586398001762-7ddd311debd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80',
-          image4: null,
-          image5: null,
-        },
-        {
-          image1:
-            'https://images.unsplash.com/photo-1586398001762-7ddd311debd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80',
-          image2: null,
-          image3: null,
-          image4: null,
-          image5: null,
-        },
-      ],
       setHeight: {
         height: 'auto',
       },
+      lang_json: lang_from_json,
     };
+  },
+  computed: {
+    ...mapGetters({
+      lang: 'lang',
+      posts: 'posts',
+      featureList: 'featureList',
+      typeList: 'typeList',
+      url: 'url',
+    }),
   },
   mounted() {
     this.setHeight.height = `${window.innerHeight - 68}px`;
+    this.$store.dispatch('GET_DATA');
   },
 };
 </script>
@@ -171,7 +160,7 @@ section {
 
 .other_icons {
   position: absolute;
-  bottom: 30px;
+  bottom: 45px;
   right: 5px;
 }
 

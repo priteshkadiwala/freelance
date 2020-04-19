@@ -6,15 +6,43 @@
         <!-- no gutters help put some padding in the containers -->
         <b-row no-gutters class="w-100 justify-content-center">
           <!-- main col with full width -->
-          <b-col cols="6">
+          <b-col cols="12">
             <!-- @NOTE: show this when screen width < lg (1024px) -->
             <div :style="{ height: '40px' }" class="d-lg-none">
-              <b-navbar-nav class="flex-row justify-content-around">
-                <b-nav-item class="p-0">
-                  <h3 class="m-0 mt-2 font-weight-bold">盆栽</h3>
+              <b-navbar-nav class="flex-row justify-content-around" v-if="lang == 'en'">
+                <b-nav-item class="p-0 mr-2">
+                  <h4 class="m-0 mt-2 font-weight-bold text-center">
+                    {{ lang_json.en.garden_plant }}
+                  </h4>
+                </b-nav-item>
+                <b-nav-item class="p-0 d-flex align-items-center">
+                  <h4 class="m-0 mt-2 font-weight-bold ">
+                    {{ lang_json.en.bonsai }}
+                  </h4>
+                </b-nav-item>
+              </b-navbar-nav>
+              <b-navbar-nav class="flex-row justify-content-around" v-if="lang == 'vi'">
+                <b-nav-item class="p-0 mr-2">
+                  <h4 class="m-0 mt-2 font-weight-bold">{{ lang_json.vi.garden_plant }}</h4>
                 </b-nav-item>
                 <b-nav-item class="p-0">
-                  <h3 class="m-0 mt-2 font-weight-bold">植木</h3>
+                  <h4 class="m-0 mt-2 font-weight-bold">{{ lang_json.vi.bonsai }}</h4>
+                </b-nav-item>
+              </b-navbar-nav>
+              <b-navbar-nav class="flex-row justify-content-around" v-if="lang == 'ja'">
+                <b-nav-item class="p-0">
+                  <h4 class="m-0 mt-2 font-weight-bold">{{ lang_json.ja.garden_plant }}</h4>
+                </b-nav-item>
+                <b-nav-item class="p-0">
+                  <h4 class="m-0 mt-2 font-weight-bold">{{ lang_json.ja.bonsai }}</h4>
+                </b-nav-item>
+              </b-navbar-nav>
+              <b-navbar-nav class="flex-row justify-content-around" v-if="lang == 'zh'">
+                <b-nav-item class="p-0">
+                  <h4 class="m-0 mt-2 font-weight-bold">{{ lang_json.zh.garden_plant }}</h4>
+                </b-nav-item>
+                <b-nav-item class="p-0">
+                  <h4 class="m-0 mt-2 font-weight-bold">{{ lang_json.zh.bonsai }}</h4>
                 </b-nav-item>
               </b-navbar-nav>
             </div>
@@ -259,11 +287,20 @@
 </template>
 
 <script>
+import { mapGetters, mapState } from 'vuex';
+import lang_from_json from '@/../public/static/lang.json';
+
 export default {
   name: 'nav_bar',
+  computed: {
+    ...mapGetters({
+      lang: 'lang',
+    }),
+  },
   data() {
     return {
       showFilter: false,
+      lang_json: lang_from_json,
       check1: 'not_accepted',
       check2: 'not_accepted',
       check3: 'not_accepted',
