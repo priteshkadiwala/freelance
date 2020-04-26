@@ -183,7 +183,7 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800');
 @import url('https://use.fontawesome.com/releases/v5.2.0/css/all.css');
-@import '../assets/css/blk-design-system.css';
+@import '../../assets/css/blk-design-system.css';
 
 .post {
   /* height: calc(100vh - 68px); */
