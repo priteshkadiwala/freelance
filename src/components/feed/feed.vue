@@ -42,13 +42,13 @@
       <!-- icons -->
       <div class="other_icons d-flex flex-column align-items-center justify-content-center">
         <div
-          class="icon_outer my-2 py-3 d-flex flex-column
+          class="icon_outer my-2 py-1 d-flex flex-column
           align-items-center justify-content-center"
         >
           <i class="fas fa-cart-plus fa-2x mb-1 p-0 text-white"></i>
         </div>
         <div
-          class="icon_outer my-2 py-3 d-flex flex-column
+          class="icon_outer my-2 py-1 d-flex flex-column
           align-items-center justify-content-center"
         >
           <i class="fas fa-heart fa-2x mb-1 p-0 text-white"></i>
@@ -57,13 +57,13 @@
           </h3>
         </div>
         <div
-          class="icon_outer my-2 py-3 px-2 d-flex flex-column
+          class="icon_outer my-2 py-1 px-2 d-flex flex-column
           align-items-center justify-content-center"
         >
           <i class="fas fa-question-circle fa-2x mb-1 p-0 text-white"></i>
         </div>
         <div
-          class="icon_outer my-2 py-3 px-2 d-flex flex-column
+          class="icon_outer my-2 py-1 px-2 d-flex flex-column
           align-items-center justify-content-center"
         >
           <i class="fas fa-share fa-2x text-white mb-1 p-0"></i>
@@ -205,7 +205,7 @@ section {
 
 .other_icons {
   position: absolute;
-  bottom: 75px;
+  bottom: 100px;
   right: 25px;
 }
 
