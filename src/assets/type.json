@@ -1,0 +1,26 @@
+{
+  "featureList": {
+    "1": "Special",
+    "2": "Gate covering",
+    "3": "Nebari",
+    "4": "Informal upright",
+    "5": "Cascade",
+    "6": "Rough ",
+    "7": "shape of Bonsai",
+    "8": "Straight",
+    "9": "Many leaves",
+    "10": "Low tree",
+    "99": "sale"
+  },
+  "typeList": {
+    "1": "Podocarpus",
+    "2": "Black Pine",
+    "3": "White Pine",
+    "4": "Red Pine",
+    "5": "Chinese juniper",
+    "6": "Maple",
+    "7": "Tsubaki",
+    "8": "Satsuki azalea",
+    "9": "Other"
+  }
+}

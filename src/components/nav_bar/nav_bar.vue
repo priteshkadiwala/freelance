@@ -302,7 +302,7 @@
 
 <script>
 import { mapGetters, mapState } from 'vuex';
-import lang_from_json from '@/../public/static/lang.json';
+import lang_from_json from '../assets/lang.json';
 
 export default {
   name: 'nav_bar',

@@ -113,14 +113,14 @@
 </template>
 
 <script>
-import lang_from_json from '@/../public/static/lang.json';
-import post_json from '@/../public/static/post.json';
 
 import { mapGetters, mapState } from 'vuex';
 
 import debounce from 'lodash/debounce';
 
 import axios from 'axios';
+import post_json from '../assets/post.json';
+import lang_from_json from '../assets/lang.json';
 
 export default {
   name: 'feed',
