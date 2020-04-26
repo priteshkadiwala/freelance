@@ -9,7 +9,7 @@ import store from './store';
 Vue.use(BootstrapVue);
 
 Vue.use(VueLazyload, {
-  loading: '/static/assets/img/loading.gif',
+  loading: './assets/loading.gif',
 });
 
 Vue.config.productionTip = false;
