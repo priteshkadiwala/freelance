@@ -53,7 +53,7 @@
 
     <!-- Nav bar fixed at the bottom -->
     <b-navbar
-      class="border-top d-lg-none d-flex align-items-start py-2"
+      class="border-top d-lg-none d-flex align-items-start py-2 px-1"
       fixed="bottom"
       :style="{ minHeight: '50px', backgroundColor: '#010212' }"
     >
@@ -68,44 +68,58 @@
               <b-nav-item class="p-0">
                 <div class="d-flex flex-column align-items-center justify-content-center">
                   <i class="fas fa-user fa-lg text-white m-0 mb-1 p-0"></i>
-                  <h5 class="m-0">マイページ</h5>
+                  <h5 class="m-0" v-if="lang == 'en'">{{ lang_json.en.my_page }}</h5>
+                  <h5 class="m-0" v-if="lang == 'vi'">{{ lang_json.vi.my_page }}</h5>
+                  <h5 class="m-0" v-if="lang == 'ja'">{{ lang_json.ja.my_page }}</h5>
+                  <h5 class="m-0" v-if="lang == 'zh'">{{ lang_json.zh.my_page }}</h5>
                 </div>
               </b-nav-item>
               <!-- notification page -->
               <b-nav-item class="p-0">
                 <div class="d-flex flex-column align-items-center justify-content-center">
                   <i class="fas fa-bell fa-lg text-white m-0 mb-1 p-0"></i>
-                  <h5 class="m-0">通知</h5>
+                  <h5 class="m-0" v-if="lang == 'en'">{{ lang_json.en.notification }}</h5>
+                  <h5 class="m-0" v-if="lang == 'vi'">{{ lang_json.vi.notification }}</h5>
+                  <h5 class="m-0" v-if="lang == 'ja'">{{ lang_json.ja.notification }}</h5>
+                  <h5 class="m-0" v-if="lang == 'zh'">{{ lang_json.zh.notification }}</h5>
                 </div>
               </b-nav-item>
             </b-navbar-nav>
           </b-col>
           <!-- main col with full width -->
-          <b-col>
-            <b-navbar-nav class="flex-row">
-              <!-- add page -->
-              <b-nav-item class="p-0 w-100 d-flex justify-content-center">
-                <div class="d-flex flex-column align-items-center justify-content-center ml-2">
-                  <i class="fas fa-plus-circle fa-lg text-white m-0 mb-1 p-0"></i>
+          <b-col class="position-relative">
+            <b-navbar-nav
+              class="search_outer rounded-circle d-flex align-items-center justify-content-center"
+            >
+              <!-- search page -->
+              <b-nav-item class="p-0" @click="showFilter = !showFilter">
+                <div class="d-flex flex-column align-items-center justify-content-center">
+                  <i class="fas fa-search fa-2x text-white m-0 mb-1 p-0"></i>
                 </div>
               </b-nav-item>
             </b-navbar-nav>
           </b-col>
           <!-- main col with full width -->
-          <b-col cols="5">
+          <b-col cols="5" class="">
             <b-navbar-nav class="flex-row justify-content-around">
               <!-- cart page -->
               <b-nav-item class="p-0">
                 <div class="d-flex flex-column align-items-center justify-content-center">
                   <i class="fas fa-shopping-cart fa-lg text-white m-0 mb-1 p-0"></i>
-                  <h5 class="m-0">カート</h5>
+                  <h5 class="m-0" v-if="lang == 'en'">{{ lang_json.en.shopping }}</h5>
+                  <h5 class="m-0" v-if="lang == 'vi'">{{ lang_json.vi.shopping }}</h5>
+                  <h5 class="m-0" v-if="lang == 'ja'">{{ lang_json.ja.shopping }}</h5>
+                  <h5 class="m-0" v-if="lang == 'zh'">{{ lang_json.zh.shopping }}</h5>
                 </div>
               </b-nav-item>
               <!-- search page -->
               <b-nav-item class="p-0" @click="showFilter = !showFilter">
                 <div class="d-flex flex-column align-items-center justify-content-center">
-                  <i class="fas fa-search fa-lg text-white m-0 mb-1 p-0"></i>
-                  <h5 class="m-0">検索</h5>
+                  <i class="fas fa-globe fa-lg text-white m-0 mb-1 p-0"></i>
+                  <h5 class="m-0" v-if="lang == 'en'">{{ lang_json.en.lang_change }}</h5>
+                  <h5 class="m-0" v-if="lang == 'vi'">{{ lang_json.vi.lang_change }}</h5>
+                  <h5 class="m-0" v-if="lang == 'ja'">{{ lang_json.ja.lang_change }}</h5>
+                  <h5 class="m-0" v-if="lang == 'zh'">{{ lang_json.zh.lang_change }}</h5>
                 </div>
               </b-nav-item>
             </b-navbar-nav>
@@ -115,7 +129,7 @@
     </b-navbar>
 
     <!-- filter -->
-    <div class="filter w-100 py-3" v-if="showFilter">
+    <div class="filter w-100 py-4" v-if="showFilter">
       <b-container fluid class="position-relative">
         <b-row no-gutters class="">
           <div class="close_icon">
@@ -347,6 +361,16 @@ export default {
   top: 0px;
   right: 20px;
   z-index: 1;
+}
+
+.search_outer {
+  position: absolute;
+  left: 50%;
+  top: -30px;
+  height: 75px;
+  width: 75px;
+  background: #083c16;
+  transform: translateX(-50%);
 }
 </style>
 

@@ -32,7 +32,11 @@
     "sold_out": "bán hết",
     "deleted": "xoá bỏ",
     "no_exist_item": "No Exist Item",
-    "more": "more +"
+    "more": "more +",
+    "my_page": "cá nhân",
+    "lang_change": "Language",
+    "notification": "Thông báo",
+    "shopping": "giỏ hàng"
   },
   "en": {
     "description": "No.1 Japanese Bonsai and garden trees website. Japan's largest Garden trees and Bonsai export company.",
@@ -40,7 +44,7 @@
     "category": "CATEGORY",
     "now_arrival": "NOW ARRIVAL",
     "garden_plant": "Garden plant",
-    "bonsai": "Bonsai",
+    "bonsai": "BONSAI",
     "feature": "Feature",
     "number": "No.",
     "availability": "Availability",
@@ -68,7 +72,11 @@
     "sold_out": "Sold out",
     "deleted": "Deleted",
     "no_exist_item": "No Exist Item",
-    "more": "more +"
+    "more": "more +",
+    "my_page": "My page",
+    "lang_change": "Language",
+    "notification": "Notification",
+    "shopping": "Cart"
   },
   "ja": {
     "welcome": "ようこそDashu.jpへ",
@@ -103,7 +111,11 @@
     "sold_out": "売切れ",
     "deleted": "削除",
     "no_exist_item": "存在しない商品です。",
-    "more": "さらに表示+"
+    "more": "さらに表示+",
+    "my_page": "マイページ",
+    "lang_change": "言語切替",
+    "notification": "通知",
+    "shopping": "カート"
   },
   "zh": {
     "description": "日本最大的树木网页. 高品质，低价格的盆景树木贩卖网站开通了！！",
@@ -137,6 +149,10 @@
     "sold_out": "已售",
     "deleted": "删除",
     "no_exist_item": "不存在的产品",
-    "more": "more +"
+    "more": "more +",
+    "my_page": "我的页面",
+    "lang_change": "言語切替",
+    "notification": "通知",
+    "shopping": "大车"
   }
 }

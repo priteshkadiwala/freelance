@@ -1,6 +1,11 @@
 <template>
   <div class="post" :style="setHeight">
-    <section class="position-relative h-100" v-for="(post, index) in posts" :key="index">
+    <section
+      class="position-relative h-100"
+      v-for="(post, index) in local_posts"
+      :id="'post_' + index"
+      :key="index"
+    >
       <!-- images -->
       <b-carousel :interval="0" indicators class="h-100">
         <!-- image 1 -->
@@ -40,29 +45,28 @@
           class="icon_outer my-2 py-3 d-flex flex-column
           align-items-center justify-content-center"
         >
-          <i class="fas fa-cart-plus fa-2x mb-1 p-0 text-white"></i>
-          <h4 class="m-0 text-white">カートへ</h4>
+          <i class="fas fa-cart-plus fa-3x mb-1 p-0 text-white"></i>
         </div>
         <div
           class="icon_outer my-2 py-3 d-flex flex-column
           align-items-center justify-content-center"
         >
-          <i class="fas fa-heart fa-2x mb-1 p-0 text-white"></i>
-          <h4 class="m-0 text-white">お気に入り</h4>
+          <i class="fas fa-heart fa-3x mb-1 p-0 text-white"></i>
+          <h3 class="text-white mb-1 font-weight-bold" v-if="likes[index] != null">
+            {{ likes[index] }}
+          </h3>
         </div>
         <div
           class="icon_outer my-2 py-3 px-2 d-flex flex-column
           align-items-center justify-content-center"
         >
-          <i class="fas fa-question-circle fa-2x mb-1 p-0 text-white"></i>
-          <h4 class="m-0 text-white">問い合わせ</h4>
+          <i class="fas fa-question-circle fa-3x mb-1 p-0 text-white"></i>
         </div>
         <div
           class="icon_outer my-2 py-3 px-2 d-flex flex-column
           align-items-center justify-content-center"
         >
-          <i class="fas fa-share fa-2x text-white mb-1 p-0"></i>
-          <h4 class="m-0 text-white">シェア</h4>
+          <i class="fas fa-share fa-3x text-white mb-1 p-0"></i>
         </div>
       </div>
       <!-- details -->
@@ -81,26 +85,26 @@
         </div>
         <div v-if="lang == 'vi'">
           <h4 class="text-white mb-1 font-weight-bold">
-            {{ lang_json.en.height }}: {{ post.height }} {{ lang_json.en.width }}: {{ post.width }}
+            {{ lang_json.vi.height }}: {{ post.height }} {{ lang_json.vi.width }}: {{ post.width }}
           </h4>
           <h4 class="text-white mb-1 font-weight-bold">
-            {{ lang_json.en.circumference }}: {{ post.around }}
+            {{ lang_json.vi.circumference }}: {{ post.around }}
           </h4>
         </div>
         <div v-if="lang == 'ja'">
           <h4 class="text-white mb-1 font-weight-bold">
-            {{ lang_json.en.height }}: {{ post.height }} {{ lang_json.en.width }}: {{ post.width }}
+            {{ lang_json.ja.height }}: {{ post.height }} {{ lang_json.ja.width }}: {{ post.width }}
           </h4>
           <h4 class="text-white mb-1 font-weight-bold">
-            {{ lang_json.en.circumference }}: {{ post.around }}
+            {{ lang_json.ja.circumference }}: {{ post.around }}
           </h4>
         </div>
         <div v-if="lang == 'zh'">
           <h4 class="text-white mb-1 font-weight-bold">
-            {{ lang_json.en.height }}: {{ post.height }} {{ lang_json.en.width }}: {{ post.width }}
+            {{ lang_json.zh.height }}: {{ post.height }} {{ lang_json.zh.width }}: {{ post.width }}
           </h4>
           <h4 class="text-white mb-1 font-weight-bold">
-            {{ lang_json.en.circumference }}: {{ post.around }}
+            {{ lang_json.zh.circumference }}: {{ post.around }}
           </h4>
         </div>
       </div>
@@ -110,8 +114,13 @@
 
 <script>
 import lang_from_json from '@/../public/static/lang.json';
+import post_json from '@/../public/static/post.json';
 
 import { mapGetters, mapState } from 'vuex';
+
+import debounce from 'lodash/debounce';
+
+import axios from 'axios';
 
 export default {
   name: 'feed',
@@ -121,6 +130,8 @@ export default {
         height: 'auto',
       },
       lang_json: lang_from_json,
+      likes: [],
+      local_posts: [],
     };
   },
   computed: {
@@ -132,9 +143,40 @@ export default {
       url: 'url',
     }),
   },
+  watch: {
+    posts(val) {
+      console.log(val);
+    },
+  },
+  methods: {
+    isInViewport(elem) {
+      const bounding = elem.getBoundingClientRect();
+      return (
+        bounding.top >= 0
+        && bounding.left >= 0
+        && bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        && bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    },
+  },
   mounted() {
     this.setHeight.height = `${window.innerHeight - 68}px`;
-    this.$store.dispatch('GET_DATA');
+    this.local_posts = post_json.results.data.data;
+    // this.$store.dispatch('GET_DATA');
+
+    // $('.post').scroll(
+    //   debounce(() => {
+    //     for (let i = 0; i < this.posts.length; i++) {
+    //       const ele = document.getElementById(`post_${i}`);
+    //       if (this.isInViewport(ele)) {
+    //         axios.get(`https://dashu.2-d.jp/like?id=${this.posts[i].id}`).then((resp) => {
+    //           console.log(resp);
+    //           this.likes[i] = resp;
+    //         });
+    //       }
+    //     }
+    //   }, 250),
+    // );
   },
 };
 </script>
@@ -160,8 +202,8 @@ section {
 
 .other_icons {
   position: absolute;
-  bottom: 45px;
-  right: 5px;
+  bottom: 75px;
+  right: 25px;
 }
 
 .details {
