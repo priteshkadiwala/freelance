@@ -4451,7 +4451,7 @@ button.close {
   .bs-popover-top .arrow::before, .bs-popover-auto[x-placement^="top"] .arrow::before {
     bottom: 0;
     border-top-color: transparent; }
-  
+
   .bs-popover-top .arrow::after,
   .bs-popover-auto[x-placement^="top"] .arrow::after {
     bottom: 1px;
@@ -4471,7 +4471,7 @@ button.close {
   .bs-popover-right .arrow::before, .bs-popover-auto[x-placement^="right"] .arrow::before {
     left: 0;
     border-right-color: transparent; }
-  
+
   .bs-popover-right .arrow::after,
   .bs-popover-auto[x-placement^="right"] .arrow::after {
     left: 1px;
@@ -4488,7 +4488,7 @@ button.close {
   .bs-popover-bottom .arrow::before, .bs-popover-auto[x-placement^="bottom"] .arrow::before {
     top: 0;
     border-bottom-color: transparent; }
-  
+
   .bs-popover-bottom .arrow::after,
   .bs-popover-auto[x-placement^="bottom"] .arrow::after {
     top: 1px;
@@ -4517,7 +4517,7 @@ button.close {
   .bs-popover-left .arrow::before, .bs-popover-auto[x-placement^="left"] .arrow::before {
     right: 0;
     border-left-color: transparent; }
-  
+
   .bs-popover-left .arrow::after,
   .bs-popover-auto[x-placement^="left"] .arrow::after {
     right: 1px;
@@ -10172,42 +10172,12 @@ hr {
   margin-top: 1rem;
   margin-bottom: 1rem; }
 
-.icon {
-  width: auto;
-  height: auto; }
-  .icon i, .icon svg {
-    font-size: auto-0.75; }
-
-.icon + .icon-text {
-  padding-left: 1rem;
-  width: calc(100% - auto - 1); }
 
 .icon-xl {
   width: 5rem;
   height: 5rem; }
   .icon-xl i, .icon-xl svg {
     font-size: 4.25rem; }
-
-.icon-xl + .icon-text {
-  width: calc(100% - $icon-size-xl - 1); }
-
-.icon-lg {
-  width: 3.7rem;
-  height: 3.7rem; }
-  .icon-lg i, .icon-lg svg {
-    font-size: 2.95rem; }
-
-.icon-lg + .icon-text {
-  width: calc(100% - $icon-size-lg - 1); }
-
-.icon-sm {
-  width: 1.875rem;
-  height: 1.875rem; }
-  .icon-sm i, .icon-sm svg {
-    font-size: 1.125rem; }
-
-.icon-sm + .icon-text {
-  width: calc(100% - $icon-size-sm - 1); }
 
 .icon-shape {
   padding: 12px;
@@ -11809,89 +11779,6 @@ textarea.form-control {
 .section-full-page .footer .copyright a {
   color: #ffffff; }
 
-.register-page {
-  background-color: #010212; }
-  .register-page .link {
-    font-size: 10px;
-    color: #ffffff;
-    text-decoration: none; }
-  .register-page .register-bg {
-    height: 700px;
-    background: linear-gradient(to bottom, transparent 0%, #1f2251 100%);
-    width: 700px;
-    position: relative;
-    right: -600px;
-    top: -750px;
-    border-radius: 20%;
-    transform: rotate(-15deg); }
-  .register-page .square {
-    position: absolute;
-    transition: 0.5s ease-out;
-    border-radius: 2px;
-    background-size: 100%;
-    border-radius: 20%; }
-  .register-page .square-1 {
-    height: 300px;
-    width: 300px;
-    background-image: url("../../assets/img/square1.png");
-    top: 175px;
-    right: 150px;
-    opacity: 0.8; }
-  .register-page .square-2 {
-    height: 120px;
-    width: 120px;
-    background-image: url("../../assets/img/square2.png");
-    opacity: 0.9;
-    top: 310px;
-    right: 390px; }
-  .register-page .square-3 {
-    width: 200px;
-    height: 200px;
-    background-image: url("../../assets/img/square3.png");
-    opacity: 0.3;
-    top: -50px;
-    right: 400px; }
-  .register-page .square-4 {
-    height: 200px;
-    width: 200px;
-    background-image: url("../../assets/img/square4.png");
-    right: -50px;
-    top: 525px; }
-  .register-page .square-5 {
-    height: 150px;
-    width: 150px;
-    background-image: url("../../assets/img/square5.png");
-    opacity: 0.5;
-    top: 500px;
-    right: 470px; }
-  .register-page .square-6 {
-    height: 70px;
-    width: 70px;
-    background-image: url("../../assets/img/square5.png");
-    opacity: 0.9;
-    top: 105px;
-    right: 20px; }
-  .register-page .square-7 {
-    height: 200px;
-    width: 200px;
-    background-image: url("../../assets/img/square5.png");
-    left: -100px;
-    top: 100px;
-    opacity: .4; }
-  .register-page .square-8 {
-    height: 100px;
-    width: 100px;
-    background-image: url("../../assets/img/square1.png");
-    left: 300px;
-    top: 400px;
-    opacity: .4; }
-
-.index-page,
-.landing-page,
-.profile-page,
-.register-page {
-  background-image: url("../../assets/img/dots.png");
-  background-size: contain; }
 
 @media (max-width: 991.98px) {
   .section:nth-of-type(2) .path {
@@ -12283,49 +12170,6 @@ hr {
 .section-full-screen {
   height: 100vh; }
 
-.section-signup {
-  padding-top: 20vh;
-  overflow: hidden; }
-  .section-signup .square {
-    background-size: cover; }
-  .section-signup .square-1 {
-    height: 300px;
-    width: 300px;
-    background-image: url("../../assets/img/square1.png");
-    top: 80px;
-    left: 100px;
-    opacity: 0.3;
-    -webkit-animation-duration: 5s;
-            animation-duration: 5s; }
-  .section-signup .square-2 {
-    height: 200px;
-    width: 200px;
-    background: url("../../assets/img/square3.png");
-    background-size: cover;
-    bottom: 40px;
-    left: 600px;
-    opacity: 0.1;
-    -webkit-animation-duration: 8s;
-            animation-duration: 8s; }
-  .section-signup .square-3 {
-    height: 100px;
-    width: 100px;
-    background: url("../../assets/img/square2.png");
-    background-size: cover;
-    top: 300px;
-    left: 700px;
-    -webkit-animation-duration: 5s;
-            animation-duration: 5s; }
-  .section-signup .square-4 {
-    height: 250px;
-    width: 250px;
-    background: url("../../assets/img/square3.png");
-    background-size: cover;
-    top: 0px;
-    right: 100px;
-    opacity: 0.8;
-    -webkit-animation-duration: 9s;
-            animation-duration: 9s; }
 
 .parallax-s {
   overflow: hidden;
