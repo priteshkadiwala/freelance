@@ -52,8 +52,8 @@
           align-items-center justify-content-center"
         >
           <i class="fas fa-heart fa-3x mb-1 p-0 text-white"></i>
-          <h3 class="text-white mb-1 font-weight-bold" v-if="likes[index] != null">
-            {{ likes[index] }}
+          <h3 class="text-white mb-1 font-weight-bold">
+            {{ 20 }}
           </h3>
         </div>
         <div

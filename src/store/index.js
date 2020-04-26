@@ -39,6 +39,9 @@ export default new Vuex.Store({
       console.log(state.featureList);
       console.log(state.typeList);
     },
+    SET_LANG: (state, resp) => {
+      state.lang = resp;
+    },
   },
   actions: {
     GET_DATA({ commit }) {

@@ -113,7 +113,7 @@
                 </div>
               </b-nav-item>
               <!-- search page -->
-              <b-nav-item class="p-0" @click="showFilter = !showFilter">
+              <b-nav-item class="p-0" @click="showLang = !showLang">
                 <div class="d-flex flex-column align-items-center justify-content-center">
                   <i class="fas fa-globe fa-lg text-white m-0 mb-1 p-0"></i>
                   <h5 class="m-0" v-if="lang == 'en'">{{ lang_json.en.lang_change }}</h5>
@@ -297,6 +297,38 @@
         </b-row>
       </b-container>
     </div>
+
+    <div class="filter w-100 py-4" v-if="showLang">
+      <b-container fluid class="position-relative">
+        <b-row no-gutters class="">
+          <div class="close_icon">
+            <i class="fas fa-times fa-lg text-white" @click="showLang = false"></i>
+          </div>
+          <!-- 特徴 -->
+          <b-col cols="12" class="mb-4">
+            <div class="">
+              <h4 class="mb-2 text-white">Language</h4>
+              <b-row no-gutters>
+                <b-col cols="6" class="">
+                  <b-form-radio class="text-white mb-2" v-model="selectedLang" value="en">
+                    English
+                  </b-form-radio>
+                  <b-form-radio class="text-white mb-2" v-model="selectedLang" value="vi">
+                    Vietnamese
+                  </b-form-radio>
+                  <b-form-radio class="text-white mb-2" v-model="selectedLang" value="zh">
+                    Chinese
+                  </b-form-radio>
+                  <b-form-radio class="text-white mb-2" v-model="selectedLang" value="ja">
+                    Japanese
+                  </b-form-radio>
+                </b-col>
+              </b-row>
+            </div>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
   </div>
 </template>
 
@@ -311,10 +343,18 @@ export default {
       lang: 'lang',
     }),
   },
+  watch: {
+    selectedLang(val) {
+      this.$store.commit('SET_LANG', val);
+      this.showLang = false;
+    },
+  },
   data() {
     return {
       showFilter: false,
+      showLang: false,
       lang_json: lang_from_json,
+      selectedLang: '',
       check1: 'not_accepted',
       check2: 'not_accepted',
       check3: 'not_accepted',
@@ -344,6 +384,9 @@ export default {
         { value: 10, text: 'その他雑木' },
       ],
     };
+  },
+  mounted() {
+    this.selectedLang = this.lang;
   },
 };
 </script>
