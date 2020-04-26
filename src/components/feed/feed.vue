@@ -45,13 +45,13 @@
           class="icon_outer my-2 py-3 d-flex flex-column
           align-items-center justify-content-center"
         >
-          <i class="fas fa-cart-plus fa-3x mb-1 p-0 text-white"></i>
+          <i class="fas fa-cart-plus fa-2x mb-1 p-0 text-white"></i>
         </div>
         <div
           class="icon_outer my-2 py-3 d-flex flex-column
           align-items-center justify-content-center"
         >
-          <i class="fas fa-heart fa-3x mb-1 p-0 text-white"></i>
+          <i class="fas fa-heart fa-2x mb-1 p-0 text-white"></i>
           <h3 class="text-white mb-1 font-weight-bold">
             {{ 20 }}
           </h3>
@@ -60,13 +60,13 @@
           class="icon_outer my-2 py-3 px-2 d-flex flex-column
           align-items-center justify-content-center"
         >
-          <i class="fas fa-question-circle fa-3x mb-1 p-0 text-white"></i>
+          <i class="fas fa-question-circle fa-2x mb-1 p-0 text-white"></i>
         </div>
         <div
           class="icon_outer my-2 py-3 px-2 d-flex flex-column
           align-items-center justify-content-center"
         >
-          <i class="fas fa-share fa-3x text-white mb-1 p-0"></i>
+          <i class="fas fa-share fa-2x text-white mb-1 p-0"></i>
         </div>
       </div>
       <!-- details -->
