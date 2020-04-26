@@ -52,9 +52,9 @@
           align-items-center justify-content-center"
         >
           <i class="fas fa-heart fa-2x mb-1 p-0 text-white"></i>
-          <h3 class="text-white mb-1 font-weight-bold">
+          <h4 class="text-white mb-1">
             {{ 20 }}
-          </h3>
+          </h4>
         </div>
         <div
           class="icon_outer my-2 py-1 px-2 d-flex flex-column
