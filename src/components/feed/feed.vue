@@ -71,12 +71,12 @@
       </div>
       <!-- details -->
       <div class="w-100 details py-3 px-2">
-        <h4 class="text-white mb-1 font-weight-bold shadow">
+        <h4 class="text-white mb-1 font-weight-bold">
           ID: {{ post.id }} / {{ local_typeList[post.type_id] }}
         </h4>
 
         <div v-if="lang == 'en'">
-          <h4 class="text-white mb-1 font-weight-bold shadow">
+          <h4 class="text-white mb-1 font-weight-bold">
             {{ lang_json.en.price }}: {{ post.selling_price_val }}
           </h4>
           <h4 class="text-white mb-1 font-weight-bold">
@@ -85,7 +85,7 @@
           </h4>
         </div>
         <div v-if="lang == 'vi'">
-          <h4 class="text-white mb-1 font-weight-bold shadow">
+          <h4 class="text-white mb-1 font-weight-bold">
             {{ lang_json.vi.price }}: {{ post.selling_price_val }}
           </h4>
           <h4 class="text-white mb-1 font-weight-bold">
@@ -94,7 +94,7 @@
           </h4>
         </div>
         <div v-if="lang == 'ja'">
-          <h4 class="text-white mb-1 font-weight-bold shadow">
+          <h4 class="text-white mb-1 font-weight-bold">
             {{ lang_json.ja.price }}: {{ post.selling_price_val }}
           </h4>
           <h4 class="text-white mb-1 font-weight-bold">
@@ -103,7 +103,7 @@
           </h4>
         </div>
         <div v-if="lang == 'zh'">
-          <h4 class="text-white mb-1 font-weight-bold shadow">
+          <h4 class="text-white mb-1 font-weight-bold">
             {{ lang_json.zh.price }}: {{ post.selling_price_val }}
           </h4>
           <h4 class="text-white mb-1 font-weight-bold">

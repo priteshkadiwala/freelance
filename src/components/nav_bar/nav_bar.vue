@@ -98,7 +98,13 @@
               class="search_outer rounded-circle d-flex align-items-center justify-content-center"
             >
               <!-- search page -->
-              <b-nav-item class="p-0" @click="showFilter = !showFilter">
+              <b-nav-item
+                class="p-0"
+                @click="
+                  showFilter = !showFilter;
+                  showLang = false;
+                "
+              >
                 <div class="d-flex flex-column align-items-center justify-content-center">
                   <i class="fas fa-search fa-2x text-white m-0 mb-1 p-0"></i>
                 </div>
@@ -119,7 +125,13 @@
                 </div>
               </b-nav-item>
               <!-- search page -->
-              <b-nav-item class="p-0" @click="showLang = !showLang">
+              <b-nav-item
+                class="p-0"
+                @click="
+                  showLang = !showLang;
+                  showFilter = false;
+                "
+              >
                 <div class="d-flex flex-column align-items-center justify-content-center">
                   <i class="fas fa-globe fa-lg text-white m-0 mb-1 p-0"></i>
                   <h5 class="m-0" v-if="lang == 'en'">{{ lang_json.en.lang_change }}</h5>
@@ -156,7 +168,7 @@
           <b-col cols="12" class="mb-4 border-bottom py-1">
             <div class="position-relative d-flex justify-content-between">
               <h4 class="m-0 text-white">サイズ</h4>
-              <i class="fas fa-angle-right mr-2 pt-1"></i>
+              <i class="fas fa-angle-right mr-2 pt-1 text-white"></i>
               <!-- <div class="d-flex">
                 <b-form-checkbox
                   class="text-white mr-3"
@@ -453,5 +465,9 @@ export default {
 .select_design {
   border: none;
   text-align-last: right;
+  background: transparent
+    url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='white' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E")
+    no-repeat right 0.5rem center;
+  background-size: 8px 10px;
 }
 </style>
