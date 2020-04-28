@@ -71,40 +71,44 @@
       </div>
       <!-- details -->
       <div class="w-100 details py-3 px-2">
-        <h4 class="text-white mb-1 font-weight-bold">
-          ID: {{ post.id }} / {{ typeList[post.type_id] }}
+        <h4 class="text-white mb-1 font-weight-bold shadow">
+          ID: {{ post.id }} / {{ local_typeList[post.type_id] }}
         </h4>
 
         <div v-if="lang == 'en'">
-          <h4 class="text-white mb-1 font-weight-bold">
-            {{ lang_json.en.height }}: {{ post.height }} {{ lang_json.en.width }}: {{ post.width }}
+          <h4 class="text-white mb-1 font-weight-bold shadow">
+            {{ lang_json.en.price }}: {{ post.selling_price_val }}
           </h4>
           <h4 class="text-white mb-1 font-weight-bold">
-            {{ lang_json.en.circumference }}: {{ post.around }}
+            {{ lang_json.en.height }}: {{ post.height }}m {{ lang_json.en.width }}:
+            {{ post.width }}m {{ lang_json.en.circumference }}: {{ post.around }}cm
           </h4>
         </div>
         <div v-if="lang == 'vi'">
-          <h4 class="text-white mb-1 font-weight-bold">
-            {{ lang_json.vi.height }}: {{ post.height }} {{ lang_json.vi.width }}: {{ post.width }}
+          <h4 class="text-white mb-1 font-weight-bold shadow">
+            {{ lang_json.vi.price }}: {{ post.selling_price_val }}
           </h4>
           <h4 class="text-white mb-1 font-weight-bold">
-            {{ lang_json.vi.circumference }}: {{ post.around }}
+            {{ lang_json.vi.height }}: {{ post.height }}m {{ lang_json.vi.width }}:
+            {{ post.width }}m {{ lang_json.vi.circumference }}: {{ post.around }}cm
           </h4>
         </div>
         <div v-if="lang == 'ja'">
-          <h4 class="text-white mb-1 font-weight-bold">
-            {{ lang_json.ja.height }}: {{ post.height }} {{ lang_json.ja.width }}: {{ post.width }}
+          <h4 class="text-white mb-1 font-weight-bold shadow">
+            {{ lang_json.ja.price }}: {{ post.selling_price_val }}
           </h4>
           <h4 class="text-white mb-1 font-weight-bold">
-            {{ lang_json.ja.circumference }}: {{ post.around }}
+            {{ lang_json.ja.height }}: {{ post.height }}m {{ lang_json.ja.width }}:
+            {{ post.width }}m {{ lang_json.ja.circumference }}: {{ post.around }}cm
           </h4>
         </div>
         <div v-if="lang == 'zh'">
-          <h4 class="text-white mb-1 font-weight-bold">
-            {{ lang_json.zh.height }}: {{ post.height }} {{ lang_json.zh.width }}: {{ post.width }}
+          <h4 class="text-white mb-1 font-weight-bold shadow">
+            {{ lang_json.zh.price }}: {{ post.selling_price_val }}
           </h4>
           <h4 class="text-white mb-1 font-weight-bold">
-            {{ lang_json.zh.circumference }}: {{ post.around }}
+            {{ lang_json.zh.height }}: {{ post.height }}m {{ lang_json.zh.width }}:
+            {{ post.width }}m {{ lang_json.zh.circumference }}: {{ post.around }}cm
           </h4>
         </div>
       </div>
@@ -131,6 +135,7 @@ export default {
       lang_json: lang_from_json,
       likes: [],
       local_posts: [],
+      local_typeList: [],
     };
   },
   computed: {
@@ -161,6 +166,7 @@ export default {
   mounted() {
     this.setHeight.height = `${window.innerHeight - 68}px`;
     this.local_posts = post_json.results.data.data;
+    this.local_typeList = post_json.typeList;
     // this.$store.dispatch('GET_DATA');
 
     // $('.post').scroll(
@@ -206,12 +212,22 @@ section {
 .other_icons {
   position: absolute;
   bottom: 100px;
-  right: 25px;
+  right: 15px;
 }
 
 .details {
   position: absolute;
-  bottom: 0;
+  bottom: 25px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+i {
+  text-shadow: 1px 1px rgb(187, 187, 187);
 }
 </style>
 <style>

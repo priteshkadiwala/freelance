@@ -36,8 +36,6 @@ export default new Vuex.Store({
       state.featureList = resp.data.featureList;
       state.typeList = resp.data.typeList;
       state.url = resp.data.results.path;
-      console.log(state.featureList);
-      console.log(state.typeList);
     },
     SET_LANG: (state, resp) => {
       state.lang = resp;

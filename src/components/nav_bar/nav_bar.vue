@@ -11,12 +11,18 @@
             <div :style="{ height: '40px' }" class="d-lg-none">
               <b-navbar-nav class="flex-row justify-content-around" v-if="lang == 'en'">
                 <b-nav-item class="p-0 mr-2">
-                  <h4 class="m-0 mt-2 font-weight-bold text-center">
+                  <h4 class="m-0 mt-2 font-weight-bold text-center" v-if="product_type == 1">
+                    {{ lang_json.en.garden_plant }}
+                  </h4>
+                  <h4 class="m-0 mt-2 text-center" v-else>
                     {{ lang_json.en.garden_plant }}
                   </h4>
                 </b-nav-item>
                 <b-nav-item class="p-0 d-flex align-items-center">
-                  <h4 class="m-0 mt-2 font-weight-bold ">
+                  <h4 class="m-0 mt-2 font-weight-bold" v-if="product_type == 2">
+                    {{ lang_json.en.bonsai }}
+                  </h4>
+                  <h4 class="m-0 mt-2" v-else>
                     {{ lang_json.en.bonsai }}
                   </h4>
                 </b-nav-item>
@@ -62,7 +68,7 @@
         <!-- no gutters help put some padding in the containers -->
         <b-row no-gutters class="w-100 justify-content-around">
           <!-- main col with full width -->
-          <b-col cols="5">
+          <b-col cols="5" class="nav_bottom">
             <b-navbar-nav class="flex-row justify-content-around">
               <!-- home page -->
               <b-nav-item class="p-0">
@@ -100,7 +106,7 @@
             </b-navbar-nav>
           </b-col>
           <!-- main col with full width -->
-          <b-col cols="5" class="">
+          <b-col cols="5" class="nav_bottom">
             <b-navbar-nav class="flex-row justify-content-around">
               <!-- cart page -->
               <b-nav-item class="p-0">
@@ -136,18 +142,54 @@
             <i class="fas fa-times fa-lg text-white" @click="showFilter = false"></i>
           </div>
           <!-- 樹脂 -->
-          <b-col cols="12" class="mb-4">
-            <div class="">
-              <h4 class="mb-2 text-white">樹脂</h4>
+          <b-col cols="12" class="my-4 border-bottom">
+            <div class="d-flex justify-content-between position-relative">
+              <h4 class="m-0 pt-2 text-white label">樹脂</h4>
               <b-form-select
                 v-model="selected"
-                class="text-white"
+                class="text-white select_design py-1"
                 :options="options"
               ></b-form-select>
             </div>
           </b-col>
+          <!-- サイズ -->
+          <b-col cols="12" class="mb-4 border-bottom py-1">
+            <div class="position-relative d-flex justify-content-between">
+              <h4 class="m-0 text-white">サイズ</h4>
+              <i class="fas fa-angle-right mr-2 pt-1"></i>
+              <!-- <div class="d-flex">
+                <b-form-checkbox
+                  class="text-white mr-3"
+                  v-model="lowCheck1"
+                  name="checkbox-1"
+                  value="accepted"
+                  unchecked-value="not_accepted"
+                >
+                  大
+                </b-form-checkbox>
+                <b-form-checkbox
+                  class="text-white mr-3"
+                  v-model="lowCheck2"
+                  name="checkbox-1"
+                  value="accepted"
+                  unchecked-value="not_accepted"
+                >
+                  中
+                </b-form-checkbox>
+                <b-form-checkbox
+                  class="text-white mr-3"
+                  v-model="lowCheck3"
+                  name="checkbox-1"
+                  value="accepted"
+                  unchecked-value="not_accepted"
+                >
+                  小
+                </b-form-checkbox>
+              </div> -->
+            </div>
+          </b-col>
           <!-- 特徴 -->
-          <b-col cols="12" class="mb-4">
+          <b-col cols="12" class="mb-2">
             <div class="">
               <h4 class="mb-2 text-white">特徴</h4>
               <b-row no-gutters>
@@ -256,42 +298,8 @@
               </b-row>
             </div>
           </b-col>
-          <!-- サイズ -->
-          <b-col cols="12" class="mb-4">
-            <div class="">
-              <h4 class="mb-2 text-white">サイズ</h4>
-              <div class="d-flex">
-                <b-form-checkbox
-                  class="text-white mr-3"
-                  v-model="lowCheck1"
-                  name="checkbox-1"
-                  value="accepted"
-                  unchecked-value="not_accepted"
-                >
-                  大
-                </b-form-checkbox>
-                <b-form-checkbox
-                  class="text-white mr-3"
-                  v-model="lowCheck2"
-                  name="checkbox-1"
-                  value="accepted"
-                  unchecked-value="not_accepted"
-                >
-                  中
-                </b-form-checkbox>
-                <b-form-checkbox
-                  class="text-white mr-3"
-                  v-model="lowCheck3"
-                  name="checkbox-1"
-                  value="accepted"
-                  unchecked-value="not_accepted"
-                >
-                  小
-                </b-form-checkbox>
-              </div>
-            </div>
-          </b-col>
-          <b-col cols="12" class="text-center">
+
+          <b-col cols="12" class="text-center mb-3">
             <b-button variant="success">検索</b-button>
           </b-col>
         </b-row>
@@ -335,6 +343,7 @@
 <script>
 import { mapGetters, mapState } from 'vuex';
 import lang_from_json from '../../assets/lang.json';
+import post_json from '../../assets/post.json';
 
 export default {
   name: 'nav_bar',
@@ -353,6 +362,7 @@ export default {
     return {
       showFilter: false,
       showLang: false,
+      product_type: 1,
       lang_json: lang_from_json,
       selectedLang: '',
       check1: 'not_accepted',
@@ -387,6 +397,7 @@ export default {
   },
   mounted() {
     this.selectedLang = this.lang;
+    this.product_type = post_json.results.data.data[0].product_type;
   },
 };
 </script>
@@ -413,11 +424,15 @@ export default {
 .search_outer {
   position: absolute;
   left: 50%;
-  top: -30px;
-  height: 75px;
-  width: 75px;
+  top: -45px;
+  height: 85px;
+  width: 85px;
   background: #083c16;
   transform: translateX(-50%);
+}
+
+.label {
+  position: absolute;
 }
 </style>
 
@@ -427,7 +442,16 @@ export default {
   padding-right: 0 !important;
 }
 
+.nav_bottom .nav-link {
+  padding: 15px 0 0 0;
+}
+
 .custom-control-label::before {
   background-color: white;
+}
+
+.select_design {
+  border: none;
+  text-align-last: right;
 }
 </style>
