@@ -236,7 +236,7 @@ i {
 }
 
 .carousel-indicators {
-  top: 70px;
+  top: 80px;
   bottom: 0;
   z-index: 1;
 }

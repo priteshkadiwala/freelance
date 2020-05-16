@@ -9,64 +9,67 @@
           <b-col cols="12">
             <!-- @NOTE: show this when screen width < lg (1024px) -->
             <div :style="{ height: '40px' }" class="d-lg-none">
+              <div>
+                <img src="/static/assets/img/webicon.png" class="main_img pt-2" />
+              </div>
               <b-navbar-nav class="flex-row justify-content-around" v-if="lang == 'en'">
                 <b-nav-item class="p-0 mr-2">
-                  <h4 class="m-0 mt-2 font-weight-bold text-center" v-if="product_type == 1">
+                  <h4 class="m-0 font-weight-bold text-center" v-if="product_type == 1">
                     {{ lang_json.en.garden_plant }}
                   </h4>
-                  <h4 class="m-0 mt-2 text-center" v-else>
+                  <h4 class="m-0 text-center" v-else>
                     {{ lang_json.en.garden_plant }}
                   </h4>
                 </b-nav-item>
                 <b-nav-item class="p-0 d-flex align-items-center">
-                  <h4 class="m-0 mt-2 font-weight-bold" v-if="product_type == 2">
+                  <h4 class="m-0 font-weight-bold" v-if="product_type == 2">
                     {{ lang_json.en.bonsai }}
                   </h4>
-                  <h4 class="m-0 mt-2" v-else>
+                  <h4 class="m-0" v-else>
                     {{ lang_json.en.bonsai }}
                   </h4>
                 </b-nav-item>
               </b-navbar-nav>
               <b-navbar-nav class="flex-row justify-content-around" v-if="lang == 'vi'">
                 <b-nav-item class="p-0 mr-2">
-                  <h4 class="m-0 mt-2 font-weight-bold" v-if="product_type == 1">
+                  <h4 class="m-0 font-weight-bold" v-if="product_type == 1">
                     {{ lang_json.vi.garden_plant }}
                   </h4>
-                  <h4 class="m-0 mt-2" v-else>{{ lang_json.vi.garden_plant }}</h4>
+                  <h4 class="m-0 " v-else>{{ lang_json.vi.garden_plant }}</h4>
                 </b-nav-item>
                 <b-nav-item class="p-0">
-                  <h4 class="m-0 mt-2 font-weight-bold" v-if="product_type == 2">
+                  <h4 class="m-0  font-weight-bold" v-if="product_type == 2">
                     {{ lang_json.vi.bonsai }}
                   </h4>
-                  <h4 class="m-0 mt-2" v-else>{{ lang_json.vi.bonsai }}</h4>
+                  <h4 class="m-0 " v-else>{{ lang_json.vi.bonsai }}</h4>
                 </b-nav-item>
               </b-navbar-nav>
               <b-navbar-nav class="flex-row justify-content-around" v-if="lang == 'ja'">
                 <b-nav-item class="p-0">
-                  <h4 class="m-0 mt-2 font-weight-bold" v-if="product_type == 1">
+                  <h4 class="m-0  font-weight-bold" v-if="product_type == 1">
                     {{ lang_json.ja.garden_plant }}
                   </h4>
-                  <h4 class="m-0 mt-2" v-else>{{ lang_json.ja.garden_plant }}</h4>
+                  <h4 class="m-0 " v-else>{{ lang_json.ja.garden_plant }}</h4>
                 </b-nav-item>
                 <b-nav-item class="p-0">
-                  <h4 class="m-0 mt-2 font-weight-bold" v-if="product_type == 2">
+                  <h4 class="m-0  font-weight-bold" v-if="product_type == 2">
                     {{ lang_json.ja.bonsai }}
                   </h4>
-                  <h4 class="m-0 mt-2" v-else>{{ lang_json.ja.bonsai }}</h4>
+                  <h4 class="m-0 " v-else>{{ lang_json.ja.bonsai }}</h4>
                 </b-nav-item>
               </b-navbar-nav>
               <b-navbar-nav class="flex-row justify-content-around" v-if="lang == 'zh'">
                 <b-nav-item class="p-0">
-                  <h4 class="m-0 mt-2 font-weight-bold" v-if="product_type == 1">
+                  <h4 class="m-0  font-weight-bold" v-if="product_type == 1">
                     {{ lang_json.zh.garden_plant }}
                   </h4>
-                  <h4 class="m-0 mt-2" v-else>{{ lang_json.zh.garden_plant }}</h4>
+                  <h4 class="m-0 " v-else>{{ lang_json.zh.garden_plant }}</h4>
                 </b-nav-item>
                 <b-nav-item class="p-0">
-                  <h4 class="m-0 mt-2 font-weight-bold" v-if="product_type == 2">
+                  <h4 class="m-0  font-weight-bold" v-if="product_type == 2">
                     {{ lang_json.zh.bonsai }}
                   </h4>
-                  <h4 class="m-0 mt-2" v-else>{{ lang_json.zh.bonsai }}</h4>
+                  <h4 class="m-0 " v-else>{{ lang_json.zh.bonsai }}</h4>
                 </b-nav-item>
               </b-navbar-nav>
             </div>
