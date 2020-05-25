@@ -109,7 +109,7 @@
           <b-col cols="5" class="nav_bottom">
             <b-navbar-nav class="flex-row justify-content-around">
               <!-- home page -->
-              <b-nav-item class="p-0">
+              <b-nav-item class="p-0 text-center" style="width: 65px;">
                 <div class="d-flex flex-column align-items-center justify-content-center">
                   <i class="fas fa-user fa-lg text-white m-0 mb-1 p-0"></i>
                   <h5 class="m-0" v-if="lang == 'en'">{{ lang_json.en.my_page }}</h5>
@@ -119,7 +119,7 @@
                 </div>
               </b-nav-item>
               <!-- notification page -->
-              <b-nav-item class="p-0">
+              <b-nav-item class="p-0 text-center" style="width: 74px;">
                 <div class="d-flex flex-column align-items-center justify-content-center">
                   <i class="fas fa-bell fa-lg text-white m-0 mb-1 p-0"></i>
                   <h5 class="m-0" v-if="lang == 'en'">{{ lang_json.en.notification }}</h5>
@@ -153,7 +153,7 @@
           <b-col cols="5" class="nav_bottom">
             <b-navbar-nav class="flex-row justify-content-around">
               <!-- cart page -->
-              <b-nav-item class="p-0">
+              <b-nav-item class="p-0 text-center" style="width: 57px;">
                 <div class="d-flex flex-column align-items-center justify-content-center">
                   <i class="fas fa-shopping-cart fa-lg text-white m-0 mb-1 p-0"></i>
                   <h5 class="m-0" v-if="lang == 'en'">{{ lang_json.en.shopping }}</h5>
@@ -164,7 +164,8 @@
               </b-nav-item>
               <!-- search page -->
               <b-nav-item
-                class="p-0"
+                class="p-0 text-center"
+                style="width: 65px;"
                 @click="
                   showLang = !showLang;
                   showFilter = false;
@@ -543,21 +544,13 @@ export default {
 .back_shadow {
   width: 100%;
   background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.3) 0%,
-      rgba(255, 255, 255, 0) 25%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0) 75%,
-      rgba(0, 0, 0, 0.3) 100%
-    ),
-    linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.3) 0%,
-      rgba(255, 255, 255, 0) 30%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0) 70%,
-      rgba(0, 0, 0, 0.3) 100%
-    );
+    0,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(255, 255, 255, 0) 25%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0) 75%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
   z-index: 1;
   position: absolute;
   left: 0;

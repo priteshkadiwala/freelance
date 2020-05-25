@@ -220,7 +220,7 @@ section {
   bottom: 25px;
 }
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -228,7 +228,7 @@ h5,
 h6,
 i {
   text-shadow: 1px 1px rgb(187, 187, 187);
-}
+} */
 </style>
 <style>
 .carousel-inner {
