@@ -40,7 +40,7 @@
         </b-carousel-slide>
       </b-carousel>
       <!-- icons -->
-      <div class="other_icons d-flex flex-column align-items-center justify-content-center">
+      <div class="other_icons rounded d-flex flex-column align-items-center justify-content-center">
         <div
           class="icon_outer my-2 py-1 d-flex flex-column
           align-items-center justify-content-center"
@@ -74,8 +74,15 @@
         <h4 class="text-white mb-1 font-weight-bold">
           ID: {{ post.id }} / {{ local_typeList[post.type_id] }}
         </h4>
-
-        <div v-if="lang == 'en'">
+        <div>
+          <h4 class="text-white mb-1 font-weight-bold">
+            Price: 1,200,000,000vnd
+          </h4>
+          <h4 class="text-white mb-1 font-weight-bold">
+            H: 6.5m W: 2.5m C: 120cm
+          </h4>
+        </div>
+        <!-- <div v-if="lang == 'en'">
           <h4 class="text-white mb-1 font-weight-bold">
             {{ lang_json.en.price }}: {{ post.selling_price_val }}
           </h4>
@@ -110,7 +117,7 @@
             {{ lang_json.zh.height }}: {{ post.height }}m {{ lang_json.zh.width }}:
             {{ post.width }}m {{ lang_json.zh.circumference }}: {{ post.around }}cm
           </h4>
-        </div>
+        </div> -->
       </div>
     </section>
   </div>
@@ -213,11 +220,14 @@ section {
   position: absolute;
   bottom: 100px;
   right: 15px;
+  /* background: rgba(60, 60, 60, 0.53); */
+  z-index: 2;
 }
 
 .details {
   position: absolute;
   bottom: 25px;
+  /* background: rgba(60, 60, 60, 0.53); */
 }
 
 /* h1,
@@ -246,6 +256,7 @@ i {
   height: 20px;
   border-radius: 50%;
   outline: none;
+  background-color: rgba(112, 112, 112, 0.5);
 }
 
 img[lazy='loading'] {

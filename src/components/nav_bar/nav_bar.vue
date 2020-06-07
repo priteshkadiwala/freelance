@@ -10,7 +10,7 @@
           <b-col cols="12">
             <!-- @NOTE: show this when screen width < lg (1024px) -->
             <div :style="{ height: '40px' }" class="d-lg-none">
-              <div>
+              <div class="">
                 <img src="/static/assets/img/webicon.png" class="main_img pt-2" />
               </div>
               <b-navbar-nav class="position-relative" v-if="lang == 'en'">
@@ -27,7 +27,7 @@
                   <h4 class="m-0 font-weight-bold" v-if="product_type == 2">
                     {{ lang_json.en.bonsai }}
                   </h4>
-                  <h4 class="m-0" v-else>
+                  <h4 class="m-0 font-weight-bold op-50" v-else>
                     {{ lang_json.en.bonsai }}
                   </h4>
                 </b-nav-item>
@@ -546,9 +546,9 @@ export default {
   background: linear-gradient(
     0,
     rgba(0, 0, 0, 0.3) 0%,
-    rgba(255, 255, 255, 0) 25%,
+    rgba(255, 255, 255, 0) 15%,
     rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0) 75%,
+    rgba(255, 255, 255, 0) 85%,
     rgba(0, 0, 0, 0.3) 100%
   );
   z-index: 1;
