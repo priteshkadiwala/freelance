@@ -11,7 +11,7 @@
             <!-- @NOTE: show this when screen width < lg (1024px) -->
             <div :style="{ height: '40px' }" class="d-lg-none">
               <div class="">
-                <img src="/static/assets/img/webicon.png" class="main_img pt-2" />
+                <img src="static/assets/img/webicon.png" class="main_img pt-2" />
               </div>
               <b-navbar-nav class="position-relative" v-if="lang == 'en'">
                 <b-nav-item class="p-0 top_header_g m-0">
