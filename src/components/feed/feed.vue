@@ -2,7 +2,7 @@
   <div class="post" :style="setHeight">
     <section
       class="position-relative h-100"
-      v-for="(post, index) in local_posts"
+      v-for="(post, index) in posts"
       :id="'post_' + index"
       :key="index"
     >
@@ -72,7 +72,7 @@
       <!-- details -->
       <div class="w-100 details py-3 px-2">
         <h4 class="text-white mb-1 font-weight-bold">
-          ID: {{ post.id }} / {{ local_typeList[post.type_id] }}
+          ID: {{ post.id }} / {{ typeList[post.type_id] }}
         </h4>
         <div>
           <h4 class="text-white mb-1 font-weight-bold">
@@ -172,9 +172,9 @@ export default {
   },
   mounted() {
     this.setHeight.height = `${window.innerHeight - 68}px`;
-    this.local_posts = post_json.results.data.data;
-    this.local_typeList = post_json.typeList;
-    // this.$store.dispatch('GET_DATA');
+    // this.local_posts = post_json.results.data.data;
+    // this.local_typeList = post_json.typeList;
+    this.$store.dispatch('GET_DATA');
 
     // $('.post').scroll(
     //   debounce(() => {
