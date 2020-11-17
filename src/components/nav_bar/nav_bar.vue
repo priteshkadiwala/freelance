@@ -11,80 +11,80 @@
             <!-- @NOTE: show this when screen width < lg (1024px) -->
             <div :style="{ height: '40px' }" class="d-lg-none">
               <div class="">
-                <img src="/static/assets/img/webicon.png" class="main_img pt-2" />
+                <img src="/static/assets/img/webicon.png" class="main_img  pt-2" />
               </div>
               <b-navbar-nav class="position-relative" v-if="lang == 'en'">
                 <b-nav-item class="p-0 top_header_g m-0">
-                  <h4 class="m-0 font-weight-bold" v-if="product_type == 1">
+                  <h4 class="m-0 font-weight-bold text_shadow" v-if="product_type == 1">
                     {{ lang_json.en.garden_plant }}
                   </h4>
-                  <h4 class="m-0 text-center" v-else>
+                  <h4 class="m-0 text-center text_shadow" v-else>
                     {{ lang_json.en.garden_plant }}
                   </h4>
                 </b-nav-item>
                 <div class="middle_line"></div>
                 <b-nav-item class="p-0 d-flex align-items-center top_header_b">
-                  <h4 class="m-0 font-weight-bold" v-if="product_type == 2">
+                  <h4 class="m-0 font-weight-bold text_shadow" v-if="product_type == 2">
                     {{ lang_json.en.bonsai }}
                   </h4>
-                  <h4 class="m-0 font-weight-bold op-50" v-else>
+                  <h4 class="m-0 font-weight-bold op-50 text_shadow" v-else>
                     {{ lang_json.en.bonsai }}
                   </h4>
                 </b-nav-item>
               </b-navbar-nav>
               <b-navbar-nav class="flex-row justify-content-around" v-if="lang == 'vi'">
                 <b-nav-item class="p-0 top_header_vig">
-                  <h4 class="m-0 font-weight-bold" v-if="product_type == 1">
+                  <h4 class="m-0 font-weight-bold text_shadow" v-if="product_type == 1">
                     {{ lang_json.vi.garden_plant }}
                   </h4>
-                  <h4 class="m-0 text-center" v-else>
+                  <h4 class="m-0 text-center text_shadow" v-else>
                     {{ lang_json.vi.garden_plant }}
                   </h4>
                 </b-nav-item>
                 <div class="middle_line"></div>
                 <b-nav-item class="p-0 d-flex align-items-center top_header_vib">
-                  <h4 class="m-0 font-weight-bold" v-if="product_type == 2">
+                  <h4 class="m-0 font-weight-bold text_shadow" v-if="product_type == 2">
                     {{ lang_json.vi.bonsai }}
                   </h4>
-                  <h4 class="m-0" v-else>
+                  <h4 class="m-0 text_shadow" v-else>
                     {{ lang_json.vi.bonsai }}
                   </h4>
                 </b-nav-item>
               </b-navbar-nav>
               <b-navbar-nav class="flex-row justify-content-around" v-if="lang == 'ja'">
                 <b-nav-item class="p-0 top_header_jzg m-0">
-                  <h4 class="m-0 font-weight-bold" v-if="product_type == 1">
+                  <h4 class="m-0 font-weight-bold text_shadow" v-if="product_type == 1">
                     {{ lang_json.ja.garden_plant }}
                   </h4>
-                  <h4 class="m-0 text-center" v-else>
+                  <h4 class="m-0 text-center text_shadow" v-else>
                     {{ lang_json.ja.garden_plant }}
                   </h4>
                 </b-nav-item>
                 <div class="middle_line"></div>
                 <b-nav-item class="p-0 d-flex align-items-center top_header_jzb">
-                  <h4 class="m-0 font-weight-bold" v-if="product_type == 2">
+                  <h4 class="m-0 font-weight-bold text_shadow" v-if="product_type == 2">
                     {{ lang_json.ja.bonsai }}
                   </h4>
-                  <h4 class="m-0" v-else>
+                  <h4 class="m-0 text_shadow" v-else>
                     {{ lang_json.ja.bonsai }}
                   </h4>
                 </b-nav-item>
               </b-navbar-nav>
               <b-navbar-nav class="flex-row justify-content-around" v-if="lang == 'zh'">
                 <b-nav-item class="p-0 top_header_jzg m-0">
-                  <h4 class="m-0 font-weight-bold" v-if="product_type == 1">
+                  <h4 class="m-0 font-weight-bold text_shadow" v-if="product_type == 1">
                     {{ lang_json.zh.garden_plant }}
                   </h4>
-                  <h4 class="m-0 text-center" v-else>
+                  <h4 class="m-0 text-center text_shadow" v-else>
                     {{ lang_json.zh.garden_plant }}
                   </h4>
                 </b-nav-item>
                 <div class="middle_line"></div>
                 <b-nav-item class="p-0 d-flex align-items-center top_header_jzb">
-                  <h4 class="m-0 font-weight-bold" v-if="product_type == 2">
+                  <h4 class="m-0 font-weight-bold text_shadow" v-if="product_type == 2">
                     {{ lang_json.zh.bonsai }}
                   </h4>
-                  <h4 class="m-0" v-else>
+                  <h4 class="m-0 text_shadow" v-else>
                     {{ lang_json.zh.bonsai }}
                   </h4>
                 </b-nav-item>
@@ -97,9 +97,9 @@
 
     <!-- Nav bar fixed at the bottom -->
     <b-navbar
-      class="border-top d-lg-none d-flex align-items-start py-2 px-1"
+      class="d-lg-none d-flex align-items-start py-2 px-1"
       fixed="bottom"
-      :style="{ minHeight: '50px', backgroundColor: '#010212' }"
+      :style="{ minHeight: '50px', background: 'transparent' }"
     >
       <!-- container not fuild -->
       <b-container class="position-relative">
@@ -111,21 +111,37 @@
               <!-- home page -->
               <b-nav-item class="p-0 text-center" style="width: 65px;">
                 <div class="d-flex flex-column align-items-center justify-content-center">
-                  <i class="fas fa-user fa-lg text-white m-0 mb-1 p-0"></i>
-                  <h5 class="m-0" v-if="lang == 'en'">{{ lang_json.en.my_page }}</h5>
-                  <h5 class="m-0" v-if="lang == 'vi'">{{ lang_json.vi.my_page }}</h5>
-                  <h5 class="m-0" v-if="lang == 'ja'">{{ lang_json.ja.my_page }}</h5>
-                  <h5 class="m-0" v-if="lang == 'zh'">{{ lang_json.zh.my_page }}</h5>
+                  <i class="text_shadow fas fa-user fa-lg text-white m-0 mb-1 p-0"></i>
+                  <h5 class="text_shadow m-0 font-weight-bold" v-if="lang == 'en'">
+                    {{ lang_json.en.my_page }}
+                  </h5>
+                  <h5 class="text_shadow m-0 font-weight-bold" v-if="lang == 'vi'">
+                    {{ lang_json.vi.my_page }}
+                  </h5>
+                  <h5 class="text_shadow m-0 font-weight-bold" v-if="lang == 'ja'">
+                    {{ lang_json.ja.my_page }}
+                  </h5>
+                  <h5 class="text_shadow m-0 font-weight-bold" v-if="lang == 'zh'">
+                    {{ lang_json.zh.my_page }}
+                  </h5>
                 </div>
               </b-nav-item>
               <!-- notification page -->
               <b-nav-item class="p-0 text-center" style="width: 74px;">
                 <div class="d-flex flex-column align-items-center justify-content-center">
-                  <i class="fas fa-bell fa-lg text-white m-0 mb-1 p-0"></i>
-                  <h5 class="m-0" v-if="lang == 'en'">{{ lang_json.en.notification }}</h5>
-                  <h5 class="m-0" v-if="lang == 'vi'">{{ lang_json.vi.notification }}</h5>
-                  <h5 class="m-0" v-if="lang == 'ja'">{{ lang_json.ja.notification }}</h5>
-                  <h5 class="m-0" v-if="lang == 'zh'">{{ lang_json.zh.notification }}</h5>
+                  <i class="text_shadow fas fa-bell fa-lg text-white m-0 mb-1 p-0"></i>
+                  <h5 class="text_shadow m-0 font-weight-bold" v-if="lang == 'en'">
+                    {{ lang_json.en.notification }}
+                  </h5>
+                  <h5 class="text_shadow m-0 font-weight-bold" v-if="lang == 'vi'">
+                    {{ lang_json.vi.notification }}
+                  </h5>
+                  <h5 class="text_shadow m-0 font-weight-bold" v-if="lang == 'ja'">
+                    {{ lang_json.ja.notification }}
+                  </h5>
+                  <h5 class="text_shadow m-0 font-weight-bold" v-if="lang == 'zh'">
+                    {{ lang_json.zh.notification }}
+                  </h5>
                 </div>
               </b-nav-item>
             </b-navbar-nav>
@@ -136,15 +152,26 @@
               class="search_outer rounded-circle d-flex align-items-center justify-content-center"
             >
               <!-- search page -->
-              <b-nav-item
-                class="p-0"
-                @click="
-                  showFilter = !showFilter;
-                  showLang = false;
-                "
-              >
+              <b-nav-item class="p-0">
                 <div class="d-flex flex-column align-items-center justify-content-center">
-                  <i class="fas fa-search fa-2x text-white m-0 mb-1 p-0"></i>
+                  <i
+                    class="fas fa-search fa-2x m-0 mb-1 p-0"
+                    style="color: rgba(69, 185, 168, 1)"
+                    v-if="!showFilter && !showLang"
+                    @click="
+                      showFilter = !showFilter;
+                      showLang = false;
+                    "
+                  ></i>
+                  <i
+                    class="fas fa-times fa-2x m-0 mb-1 p-0"
+                    style="color: rgba(69, 185, 168, 1)"
+                    v-if="showFilter || showLang"
+                    @click="
+                      showFilter = false;
+                      showLang = false;
+                    "
+                  ></i>
                 </div>
               </b-nav-item>
             </b-navbar-nav>
@@ -153,13 +180,21 @@
           <b-col cols="5" class="nav_bottom">
             <b-navbar-nav class="flex-row justify-content-around">
               <!-- cart page -->
-              <b-nav-item class="p-0 text-center" style="width: 57px;">
+              <b-nav-item class="p-0 text-center" style="width: 59px;">
                 <div class="d-flex flex-column align-items-center justify-content-center">
-                  <i class="fas fa-shopping-cart fa-lg text-white m-0 mb-1 p-0"></i>
-                  <h5 class="m-0" v-if="lang == 'en'">{{ lang_json.en.shopping }}</h5>
-                  <h5 class="m-0" v-if="lang == 'vi'">{{ lang_json.vi.shopping }}</h5>
-                  <h5 class="m-0" v-if="lang == 'ja'">{{ lang_json.ja.shopping }}</h5>
-                  <h5 class="m-0" v-if="lang == 'zh'">{{ lang_json.zh.shopping }}</h5>
+                  <i class="text_shadow fas fa-shopping-cart fa-lg text-white m-0 mb-1 p-0"></i>
+                  <h5 class="text_shadow m-0 font-weight-bold" v-if="lang == 'en'">
+                    {{ lang_json.en.shopping }}
+                  </h5>
+                  <h5 class="text_shadow m-0 font-weight-bold" v-if="lang == 'vi'">
+                    {{ lang_json.vi.shopping }}
+                  </h5>
+                  <h5 class="text_shadow m-0 font-weight-bold" v-if="lang == 'ja'">
+                    {{ lang_json.ja.shopping }}
+                  </h5>
+                  <h5 class="text_shadow m-0 font-weight-bold" v-if="lang == 'zh'">
+                    {{ lang_json.zh.shopping }}
+                  </h5>
                 </div>
               </b-nav-item>
               <!-- search page -->
@@ -172,11 +207,19 @@
                 "
               >
                 <div class="d-flex flex-column align-items-center justify-content-center">
-                  <i class="fas fa-globe fa-lg text-white m-0 mb-1 p-0"></i>
-                  <h5 class="m-0" v-if="lang == 'en'">{{ lang_json.en.lang_change }}</h5>
-                  <h5 class="m-0" v-if="lang == 'vi'">{{ lang_json.vi.lang_change }}</h5>
-                  <h5 class="m-0" v-if="lang == 'ja'">{{ lang_json.ja.lang_change }}</h5>
-                  <h5 class="m-0" v-if="lang == 'zh'">{{ lang_json.zh.lang_change }}</h5>
+                  <i class="text_shadow fas fa-globe fa-lg text-white m-0 mb-1 p-0"></i>
+                  <h5 class="text_shadow m-0 font-weight-bold" v-if="lang == 'en'">
+                    {{ lang_json.en.lang_change }}
+                  </h5>
+                  <h5 class="text_shadow m-0 font-weight-bold" v-if="lang == 'vi'">
+                    {{ lang_json.vi.lang_change }}
+                  </h5>
+                  <h5 class="text_shadow m-0 font-weight-bold" v-if="lang == 'ja'">
+                    {{ lang_json.ja.lang_change }}
+                  </h5>
+                  <h5 class="text_shadow m-0 font-weight-bold" v-if="lang == 'zh'">
+                    {{ lang_json.zh.lang_change }}
+                  </h5>
                 </div>
               </b-nav-item>
             </b-navbar-nav>
@@ -187,7 +230,7 @@
 
     <!-- filter -->
     <div class="filter w-100 py-4" v-if="showFilter">
-      <b-container fluid class="position-relative">
+      <b-container fluid class="position-relative pb-5 border-bottom">
         <b-row no-gutters class="">
           <div class="close_icon">
             <i class="fas fa-times fa-lg text-white" @click="showFilter = false"></i>
@@ -350,15 +393,15 @@
             </div>
           </b-col>
 
-          <b-col cols="12" class="text-center mb-3">
-            <b-button variant="success">検索</b-button>
+          <b-col cols="12" class="text-center mb-3 ">
+            <b-button variant="success" class="w-100">検索</b-button>
           </b-col>
         </b-row>
       </b-container>
     </div>
 
     <div class="filter w-100 py-4" v-if="showLang">
-      <b-container fluid class="position-relative">
+      <b-container fluid class="position-relative pb-5 border-bottom">
         <b-row no-gutters class="">
           <div class="close_icon">
             <i class="fas fa-times fa-lg text-white" @click="showLang = false"></i>
@@ -464,9 +507,18 @@ export default {
 
 .filter {
   position: absolute;
-  bottom: 68px;
-  background: #010212;
+  bottom: 0;
+  padding-bottom: 65px !important;
+  background: rgba(7, 10, 60, 0.8);
   z-index: 10;
+}
+
+.filter .border-bottom {
+  border-color: rgba(69, 185, 168, 1) !important;
+}
+
+.text_shadow {
+  text-shadow: 0px 0px 15px rgb(0, 0, 0);
 }
 
 .close_icon {
@@ -480,9 +532,10 @@ export default {
   position: absolute;
   left: 50%;
   top: -45px;
-  height: 85px;
-  width: 85px;
-  background: #083c16;
+  height: 75px;
+  width: 75px;
+  border: 3px solid rgba(69, 185, 168, 1);
+  background-color: #070a3c;
   transform: translateX(-50%);
 }
 
@@ -543,14 +596,14 @@ export default {
 
 .back_shadow {
   width: 100%;
-  background: linear-gradient(
+  /* background: linear-gradient(
     0,
     rgba(0, 0, 0, 0.3) 0%,
     rgba(255, 255, 255, 0) 15%,
     rgba(255, 255, 255, 0) 50%,
     rgba(255, 255, 255, 0) 85%,
     rgba(0, 0, 0, 0.3) 100%
-  );
+  ); */
   z-index: 1;
   position: absolute;
   left: 0;
