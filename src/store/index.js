@@ -43,7 +43,8 @@ export default new Vuex.Store({
   },
   actions: {
     GET_DATA({ commit }) {
-      axios.get('https://dashu.2-d.jp/').then((resp) => {
+      axios.get('https://dashu.xsrv.jp/api/').then((resp) => {
+        console.log(resp);
         commit('SET_DATA', resp);
       });
     },

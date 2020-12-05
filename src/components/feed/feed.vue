@@ -14,7 +14,7 @@
             <img
               class="item_photos"
               :style="setHeight"
-              v-lazy="url + post.image_path_1"
+              v-lazy="post.image_path_1"
               alt="image slot"
             />
           </template>
@@ -25,7 +25,7 @@
             <img
               class="item_photos"
               :style="setHeight"
-              v-lazy="url + post.image_path_2"
+              v-lazy="post.image_path_2"
               alt="image slot"
             />
           </template>
@@ -36,7 +36,7 @@
             <img
               class="item_photos"
               :style="setHeight"
-              v-lazy="url + post.image_path_3"
+              v-lazy="post.image_path_3"
               alt="image slot"
             />
           </template>
@@ -47,7 +47,7 @@
             <img
               class="item_photos"
               :style="setHeight"
-              v-lazy="url + post.image_path_4"
+              v-lazy="post.image_path_4"
               alt="image slot"
             />
           </template>
@@ -58,7 +58,7 @@
             <img
               class="item_photos"
               :style="setHeight"
-              v-lazy="url + post.image_path_5"
+              v-lazy="post.image_path_5"
               alt="image slot"
             />
           </template>
@@ -111,7 +111,7 @@
       <!-- details -->
       <div class="w-100 details py-3 px-2">
         <h4 class="text-white mb-1 font-weight-bold">
-          ID: {{ post.id }} / {{ typeList[post.type_id] }}
+          ID: {{ post.id }} / {{ typeList[post.type_id].type }}
         </h4>
         <!-- <div>
           <h4 class="text-white mb-1 font-weight-bold">
@@ -180,22 +180,22 @@ export default {
       },
       lang_json: lang_from_json,
       likes: [],
-      posts: [],
-      typeList: [],
+      // posts: [],
+      // typeList: [],
     };
   },
   computed: {
     ...mapGetters({
       lang: 'lang',
-      // posts: 'posts',
+      posts: 'posts',
+      typeList: 'typeList',
       // featureList: 'featureList',
-      // typeList: 'typeList',
       url: 'url',
     }),
   },
   watch: {
     posts(val) {
-      console.log(val);
+      // console.log(val);
     },
   },
   methods: {
@@ -211,8 +211,8 @@ export default {
   },
   mounted() {
     this.setHeight.height = `${window.innerHeight}px`;
-    this.posts = post_json.results.data.data;
-    this.typeList = post_json.typeList;
+    // this.posts = post_json.results.data.data;
+    // this.typeList = post_json.typeList;
     this.$store.dispatch('GET_DATA');
 
     // $('.post').scroll(
