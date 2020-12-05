@@ -77,7 +77,7 @@
             class=" my-2 py-1 d-flex flex-column
             align-items-center justify-content-center"
           >
-            <i class="text_shadow fas fa-heart fa-2x mb-1 p-0 text-white"></i>
+            <i class="text_shadow fas fa-heart fa-2x mb-1 p-0 text-white" @click="send_like"></i>
             <h4 class="text-white mb-1">
               {{ 20 }}
             </h4>
@@ -86,7 +86,7 @@
             class=" my-2 py-1 px-2 d-flex flex-column
             align-items-center justify-content-center"
           >
-            <i class="text_shadow fas fa-question-circle fa-2x mb-1 p-0 text-white"></i>
+            <i class="text_shadow fas fa-envelope fa-2x mb-1 p-0 text-white"></i>
           </div>
           <div
             class=" my-2 py-1 px-2 d-flex flex-column
@@ -208,6 +208,9 @@ export default {
         && bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
       );
     },
+    send_like() {
+      this.$store.dispatch('SEND_LIKE');
+    },
   },
   mounted() {
     this.setHeight.height = `${window.innerHeight}px`;
@@ -300,15 +303,15 @@ i {
 }
 
 .carousel-indicators {
-  top: 80px;
+  top: 100px;
   bottom: 0;
   z-index: 1;
 }
 
 .carousel-indicators li {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+  width: 50px;
+  height: 2px;
+  /* border-radius: 50%; */
   outline: none;
   background-color: rgba(112, 112, 112, 0.5);
 }

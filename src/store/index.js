@@ -48,6 +48,9 @@ export default new Vuex.Store({
         commit('SET_DATA', resp);
       });
     },
+    SEND_LIKE({ commit }) {
+      axios.post('https://dashu.xsrv.jp/api/like').then((resp) => {});
+    },
   },
   modules: {},
 });

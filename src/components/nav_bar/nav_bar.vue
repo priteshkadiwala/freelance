@@ -11,20 +11,26 @@
             <!-- @NOTE: show this when screen width < lg (1024px) -->
             <div :style="{ height: '40px' }" class="d-lg-none">
               <div class="">
-                <img src="/static/assets/img/main_logo.png" class="main_img  pt-2" />
+                <img src="/static/assets/img/main_logo.png" class="main_img  py-2" />
               </div>
               <b-navbar-nav class="position-relative" v-if="lang == 'en'">
                 <b-nav-item class="p-0 top_header_g m-0">
-                  <h4 class="m-0 font-weight-bold text_shadow" v-if="product_type == 1">
+                  <h4
+                    class="m-0 font-weight-bold text_shadow border-bottom"
+                    v-if="product_type == 1"
+                  >
                     {{ lang_json.en.garden_plant }}
                   </h4>
                   <h4 class="m-0 text-center text_shadow" v-else>
                     {{ lang_json.en.garden_plant }}
                   </h4>
                 </b-nav-item>
-                <div class="middle_line"></div>
+                <!-- <div class="middle_line"></div> -->
                 <b-nav-item class="p-0 d-flex align-items-center top_header_b">
-                  <h4 class="m-0 font-weight-bold text_shadow" v-if="product_type == 2">
+                  <h4
+                    class="m-0 font-weight-bold text_shadow border-bottom"
+                    v-if="product_type == 2"
+                  >
                     {{ lang_json.en.bonsai }}
                   </h4>
                   <h4 class="m-0 font-weight-bold op-50 text_shadow" v-else>
@@ -41,9 +47,12 @@
                     {{ lang_json.vi.garden_plant }}
                   </h4>
                 </b-nav-item>
-                <div class="middle_line"></div>
+                <!-- <div class="middle_line"></div> -->
                 <b-nav-item class="p-0 d-flex align-items-center top_header_vib">
-                  <h4 class="m-0 font-weight-bold text_shadow" v-if="product_type == 2">
+                  <h4
+                    class="m-0 font-weight-bold text_shadow border-bottom"
+                    v-if="product_type == 2"
+                  >
                     {{ lang_json.vi.bonsai }}
                   </h4>
                   <h4 class="m-0 text_shadow" v-else>
@@ -53,16 +62,22 @@
               </b-navbar-nav>
               <b-navbar-nav class="flex-row justify-content-around" v-if="lang == 'ja'">
                 <b-nav-item class="p-0 top_header_jzg m-0">
-                  <h4 class="m-0 font-weight-bold text_shadow" v-if="product_type == 1">
+                  <h4
+                    class="m-0 font-weight-bold text_shadow border-bottom"
+                    v-if="product_type == 1"
+                  >
                     {{ lang_json.ja.garden_plant }}
                   </h4>
                   <h4 class="m-0 text-center text_shadow" v-else>
                     {{ lang_json.ja.garden_plant }}
                   </h4>
                 </b-nav-item>
-                <div class="middle_line"></div>
+                <!-- <div class="middle_line"></div> -->
                 <b-nav-item class="p-0 d-flex align-items-center top_header_jzb">
-                  <h4 class="m-0 font-weight-bold text_shadow" v-if="product_type == 2">
+                  <h4
+                    class="m-0 font-weight-bold text_shadow border-bottom"
+                    v-if="product_type == 2"
+                  >
                     {{ lang_json.ja.bonsai }}
                   </h4>
                   <h4 class="m-0 text_shadow" v-else>
@@ -72,16 +87,22 @@
               </b-navbar-nav>
               <b-navbar-nav class="flex-row justify-content-around" v-if="lang == 'zh'">
                 <b-nav-item class="p-0 top_header_jzg m-0">
-                  <h4 class="m-0 font-weight-bold text_shadow" v-if="product_type == 1">
+                  <h4
+                    class="m-0 font-weight-bold text_shadow border-bottom"
+                    v-if="product_type == 1"
+                  >
                     {{ lang_json.zh.garden_plant }}
                   </h4>
                   <h4 class="m-0 text-center text_shadow" v-else>
                     {{ lang_json.zh.garden_plant }}
                   </h4>
                 </b-nav-item>
-                <div class="middle_line"></div>
+                <!-- <div class="middle_line"></div> -->
                 <b-nav-item class="p-0 d-flex align-items-center top_header_jzb">
-                  <h4 class="m-0 font-weight-bold text_shadow" v-if="product_type == 2">
+                  <h4
+                    class="m-0 font-weight-bold text_shadow border-bottom"
+                    v-if="product_type == 2"
+                  >
                     {{ lang_json.zh.bonsai }}
                   </h4>
                   <h4 class="m-0 text_shadow" v-else>
@@ -522,7 +543,7 @@ export default {
 }
 
 .main_img {
-  width: 125px;
+  width: 150px;
 }
 
 .close_icon {
@@ -554,11 +575,19 @@ export default {
   transform: translateY(-10%); */
 }
 
+.top_header_g .border-bottom {
+  border-width: 2px !important;
+}
+
 .top_header_b {
   position: absolute;
   right: 25%;
   /* top: 50%;
   transform: translateY(-10%); */
+}
+
+.top_header_b .border-bottom {
+  border-width: 2px !important;
 }
 
 .top_header_vig {
@@ -568,11 +597,19 @@ export default {
   transform: translateY(-10%); */
 }
 
+.top_header_vig .border-bottom {
+  border-width: 2px !important;
+}
+
 .top_header_vib {
   position: absolute;
   right: 20%;
   /* top: 50%;
   transform: translateY(-10%); */
+}
+
+.top_header_vib .border-bottom {
+  border-width: 2px !important;
 }
 
 .top_header_jzg {
@@ -582,11 +619,19 @@ export default {
   transform: translateY(-10%); */
 }
 
+.top_header_jzg .border-bottom {
+  border-width: 2px !important;
+}
+
 .top_header_jzb {
   position: absolute;
   right: 30%;
   /* top: 50%;
   transform: translateY(-10%); */
+}
+
+.top_header_jzb .border-bottom {
+  border-width: 2px !important;
 }
 
 .middle_line {
