@@ -170,7 +170,7 @@
           <!-- main col with full width -->
           <b-col class="position-relative">
             <b-navbar-nav
-              class="search_outer rounded-circle d-flex align-items-center justify-content-center"
+              class="search_outer shadow rounded-circle d-flex align-items-center justify-content-center"
             >
               <!-- search page -->
               <b-nav-item class="p-0">
