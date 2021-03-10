@@ -187,8 +187,8 @@ export default {
   computed: {
     ...mapGetters({
       lang: 'lang',
-      posts: 'posts',
-      typeList: 'typeList',
+      // posts: 'posts',
+      // typeList: 'typeList',
       // featureList: 'featureList',
       url: 'url',
     }),
@@ -214,9 +214,9 @@ export default {
   },
   mounted() {
     this.setHeight.height = `${window.innerHeight}px`;
-    // this.posts = post_json.results.data.data;
-    // this.typeList = post_json.typeList;
-    this.$store.dispatch('GET_DATA');
+    this.posts = post_json.results.data.data;
+    this.typeList = post_json.typeList;
+    // this.$store.dispatch('GET_DATA');
 
     // $('.post').scroll(
     //   debounce(() => {
